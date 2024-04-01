@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbqm3sfoilht"]
+
+[ext_resource type="Script" path="res://scripts/gold.gd" id="1_bvvng"]
+[ext_resource type="Texture2D" uid="uid://dxtwoppt8l2cs" path="res://assets/tileset 1.png" id="2_e18w3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cqu6s"]
+radius = 86.0523
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3q5b7"]
+atlas = ExtResource("2_e18w3")
+region = Rect2(55.9992, 72.1348, 6.6214, 5.2701)
+
+[node name="Gold" type="Node2D"]
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_bvvng")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_cqu6s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_3q5b7")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
