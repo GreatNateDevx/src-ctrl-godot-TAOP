@@ -1,10 +1,12 @@
 extends Node2D
-var hit = null
-
+var entered = false
 func _on_explosion_body_entered(body):
-	hit = body.hp
-	print(hit)
-	print(body)
-	hit = hit - 50
-	body.hp_bar.value = hit
-	print(hit)
+	entered = true
+	await get_tree().create_timer(3).timeout
+	if entered == true:
+		body.hp = body.hp - 50
+	queue_free()
+
+
+func _on_explosion_body_exited(body):
+	entered = false

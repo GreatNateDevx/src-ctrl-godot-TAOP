@@ -19,3 +19,4 @@ shape = SubResource("CircleShape2D_esej7")
 texture = ExtResource("2_sjq6f")
 
 [connection signal="body_entered" from="explosion" to="." method="_on_explosion_body_entered"]
+[connection signal="body_exited" from="explosion" to="." method="_on_explosion_body_exited"]
