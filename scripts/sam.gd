@@ -98,7 +98,7 @@ func knockback(EnemyVelocity: Vector2):
 	velocity = knockbackdir
 	move_and_slide()
 func bombd():
-	get_parent().add_child(bombo)
+	get_parent().get_parent().add_child(bombo)
 	bombo.position = self.position
 	bomb = null
 	bomb = preload("res://scenes/bomb.tscn")
