@@ -31,17 +31,17 @@ func _physics_process(_delta):
 		velocity=input_direction*speed
 		move_and_slide()
 		if input_direction == Vector2(0,0): #null
-			$samsprite.play("default_down")
-			$samsprite.flip_h = false
+			$phoenixsprite.play("default_down")
+			$phoenixsprite.flip_h = false
 		elif input_direction == Vector2(-1,0): #left
-			$samsprite.play("right")
-			$samsprite.flip_h = true
+			$phoenixsprite.play("right")
+			$phoenixsprite.flip_h = true
 		elif input_direction == Vector2(1,0): #right
-			$samsprite.play("right")
+			$phoenixsprite.play("right")
 		elif input_direction == Vector2(0,1): #down
-			$samsprite.play("down")
+			$phoenixsprite.play("down")
 		elif input_direction == Vector2(0,-1): #up
-			$samsprite.play("up")
+			$phoenixsprite.play("up")
 	if Input.is_action_just_pressed("sword") and has_sword == true:
 		disable_movment = true
 		sword()
@@ -73,22 +73,22 @@ func _physics_process(_delta):
 func sword():
 	if input_direction == Vector2(1,0):
 		$sword.rotation_degrees = 0
-		$samsprite.play("sword_right")
+		$phoenixsprite.play("sword_right")
 	if input_direction == Vector2(-1,0):
 		$sword.rotation_degrees = 180
-		$samsprite.play("sword_left")
+		$phoenixsprite.play("sword_left")
 	if input_direction == Vector2(0,1):
 		$sword.rotation_degrees = 90
-		$samsprite.play("sword_down")
+		$phoenixsprite.play("sword_down")
 	if input_direction == Vector2(0,-1):
 		$sword.rotation_degrees = 270
-		$samsprite.play("sword_up")
+		$phoenixsprite.play("sword_up")
 func _on_hurtbox_area_entered(area):
 	if area.name == "hitbox":
 		knockback(area.get_parent().velocity)
-		$samsprite.modulate = Color(1,1,1,0)
+		$phoenixsprite.modulate = Color(1,1,1,0)
 		await get_tree().create_timer(.05).timeout
-		$samsprite.modulate = Color(1,1,1,1)
+		$phoenixsprite.modulate = Color(1,1,1,1)
 		hp = hp - damage
 		hp_bar.value =hp
 		if hp <= 0:

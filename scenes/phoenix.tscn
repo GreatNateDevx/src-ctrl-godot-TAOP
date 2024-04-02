@@ -141,14 +141,14 @@ size = Vector2(32.5, 40)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67hcn"]
 
-[node name="sam" type="CharacterBody2D"]
+[node name="phoenix" type="CharacterBody2D"]
 script = ExtResource("1_jkqmk")
 
-[node name="samcollision" type="CollisionShape2D" parent="."]
+[node name="phoenixcollision" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_qmugt")
 
-[node name="samsprite" type="AnimatedSprite2D" parent="."]
+[node name="phoenixsprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, 0)
 sprite_frames = SubResource("SpriteFrames_2q0gx")
 animation = &"sword_left"
@@ -198,6 +198,7 @@ show_percentage = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/hp_bar"]
 z_index = -1
+layout_mode = 0
 offset_left = -7.0
 offset_top = -7.0
 offset_right = 483.0
@@ -205,7 +206,7 @@ offset_bottom = 126.0
 scale = Vector2(0.3, 0.3)
 color = Color(0.450648, 0.450648, 0.450648, 1)
 
-[node name="samcam" type="Camera2D" parent="."]
+[node name="phoenixcam" type="Camera2D" parent="."]
 zoom = Vector2(3.5, 3.5)
 
 [connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]

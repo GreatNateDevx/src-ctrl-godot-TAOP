@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://4n05va6k6akm"]
 
-[ext_resource type="PackedScene" uid="uid://cpve8dtclf6xl" path="res://scenes/sam.tscn" id="1_xbw5y"]
+[ext_resource type="PackedScene" uid="uid://cpve8dtclf6xl" path="res://scenes/phoenix.tscn" id="1_xbw5y"]
 [ext_resource type="PackedScene" uid="uid://dc76n0f2cvtkf" path="res://scenes/inv.tscn" id="2_r0eht"]
 
 [node name="hyrule" type="Node2D"]
