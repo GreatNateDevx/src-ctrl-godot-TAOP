@@ -1,11 +1,11 @@
 extends CharacterBody2D
-#var bomb = preload("res://scenes/bomb.tscn")
-#var bombo = bomb.instantiate()
+var bomb = preload("res://scenes/bomb.tscn")
+var bombo = bomb.instantiate()
 @onready var inv = get_parent().get_parent().get_node("pauseing/Inv")
-@onready var hp_bar = get_parent().get_parent().get_node("main/hp_bar")
-@export var speed = 115
+@onready var hp_bar = get_node("CanvasLayer/hp_bar")
+@export var speed = 80
 @export var kbpower = 5000
-#var bombs = 0
+var bombs = 4
 var is_player = true
 var dashed = false
 var has_sword = true
@@ -19,12 +19,13 @@ var damage = 5
 func _ready():
 	$sword/swordcollision.disabled = true
 	hp_bar.get("theme_override_styles/fill").bg_color = Color.RED
-func _physics_process(delta):
+	$CanvasLayer/Label2.text = str(bombs)
+func _physics_process(_delta):
 	hp_bar.value =hp
 	if input_direction != Vector2(0,0):
 		last_dir = input_direction
-	#if bombs >=1 and Input.is_action_pressed("bomb"):
-	#	bombd()
+	if bombs >=1 and Input.is_action_pressed("bomb"):
+		bombd()
 	if disable_movment == false:
 		input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down").normalized();
 		velocity=input_direction*speed
@@ -96,9 +97,8 @@ func knockback(EnemyVelocity: Vector2):
 	var knockbackdir = (EnemyVelocity-velocity).normalized()*kbpower
 	velocity = knockbackdir
 	move_and_slide()
-#func bombd():
-#	get_parent().add_child(bombo)
-#	bombo.position = self.position
-#	bomb = null
-#	bomb = preload("res://scenes/bomb.tscn")
-#broken feature
+func bombd():
+	get_parent().add_child(bombo)
+	bombo.position = self.position
+	bomb = null
+	bomb = preload("res://scenes/bomb.tscn")

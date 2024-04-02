@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://4n05va6k6akm"]
+
+[ext_resource type="PackedScene" uid="uid://cpve8dtclf6xl" path="res://scenes/sam.tscn" id="1_xbw5y"]
+[ext_resource type="PackedScene" uid="uid://dc76n0f2cvtkf" path="res://scenes/inv.tscn" id="2_r0eht"]
+
+[node name="hyrule" type="Node2D"]
+
+[node name="main" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="sam" parent="main" instance=ExtResource("1_xbw5y")]
+position = Vector2(1067, 513)
+
+[node name="pauseing" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Inv" parent="pauseing" instance=ExtResource("2_r0eht")]
+visible = false
+offset_left = 670.0
+offset_top = 257.0
+offset_right = 670.0
+offset_bottom = 257.0

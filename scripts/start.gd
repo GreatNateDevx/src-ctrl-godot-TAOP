@@ -6,7 +6,7 @@ func _ready():
 	DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_RESIZE_DISABLED, true)
 func _physics_process(_delta):
 	if Input.is_action_pressed("ui_accept"):
-		get_tree().change_scene_to_file("res://scenes/Area0.tscn")
+		get_tree().change_scene_to_file("res://scenes/hyrule.tscn")
 	if count != 30 and swwitch == false and frame == 3:
 		count = count+1
 		$Label.set("theme_override_font_sizes/font_size",count)
