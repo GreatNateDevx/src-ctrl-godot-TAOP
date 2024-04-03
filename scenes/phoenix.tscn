@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://cpve8dtclf6xl"]
 
-[ext_resource type="Script" path="res://scripts/phoenix.gd" id="1_jkqmk"]
+[ext_resource type="Script" path="res://scripts/phoenix.gd" id="1_w3e8k"]
 [ext_resource type="Texture2D" uid="uid://dxtwoppt8l2cs" path="res://assets/tileset 1.png" id="2_5htxd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qmugt"]
@@ -142,7 +142,7 @@ size = Vector2(32.5, 40)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67hcn"]
 
 [node name="phoenix" type="CharacterBody2D"]
-script = ExtResource("1_jkqmk")
+script = ExtResource("1_w3e8k")
 
 [node name="phoenixcollision" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0.5)

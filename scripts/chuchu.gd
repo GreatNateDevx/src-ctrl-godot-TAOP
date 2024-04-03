@@ -7,12 +7,12 @@ var gold = preload("res://scenes/gold.tscn")
 var goldo = gold.instantiate()
 var is_player = false
 @export var kbpower = 5000
-@onready var player = get_parent().get_node("sam")
-@onready var sword = get_parent().get_node("sam/sword")
+@onready var player = get_parent().get_node("main/phoenix")
+@onready var sword = get_parent().get_node("main/phoenix/sword")
 func _ready():
 	$chuchusprite/ProgressBar.get("theme_override_styles/fill").bg_color = Color.RED
 func _physics_process(delta):
-	var direction := global_position.direction_to(player.global_position)
+	var direction = global_position.direction_to(player.global_position)
 	velocity = direction * speed
 	move_and_slide()
 	$chuchusprite/ProgressBar.value =hp

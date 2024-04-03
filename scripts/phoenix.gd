@@ -22,6 +22,8 @@ func _ready():
 	$CanvasLayer/Label2.text = str(bombs)
 func _physics_process(_delta):
 	hp_bar.value =hp
+	if hp <= 0:
+		get_tree().change_scene_to_file("res://scenes/death.tscn")
 	if input_direction != Vector2(0,0):
 		last_dir = input_direction
 	if bombs >=1 and Input.is_action_just_pressed("bomb"):
@@ -98,7 +100,8 @@ func knockback(EnemyVelocity: Vector2):
 	velocity = knockbackdir
 	move_and_slide()
 func bombd():
-	var bomb = preload("res://scenes/bomb.tscn").instantiate()
+	bomb = preload("res://scenes/bomb.tscn").instantiate()
 	Globals.add_child(bomb)
 	bomb.position = self.position
-	bombs -= 1 
+	bombs -= 1
+	$CanvasLayer/Label2.text = str(bombs)

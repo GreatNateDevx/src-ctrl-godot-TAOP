@@ -8,5 +8,5 @@ func _on_explosion_body_entered(body):
 	queue_free()
 
 
-func _on_explosion_body_exited(body):
+func _on_explosion_body_exited(_body):
 	entered = false
