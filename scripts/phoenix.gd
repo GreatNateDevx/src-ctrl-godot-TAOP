@@ -24,7 +24,7 @@ func _physics_process(_delta):
 	hp_bar.value =hp
 	if input_direction != Vector2(0,0):
 		last_dir = input_direction
-	if bombs >=1 and Input.is_action_pressed("bomb"):
+	if bombs >=1 and Input.is_action_just_pressed("bomb"):
 		bombd()
 	if disable_movment == false:
 		input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down").normalized();
@@ -98,7 +98,7 @@ func knockback(EnemyVelocity: Vector2):
 	velocity = knockbackdir
 	move_and_slide()
 func bombd():
-	get_parent().get_parent().add_child(bombo)
-	bombo.position = self.position
-	bomb = null
-	bomb = preload("res://scenes/bomb.tscn")
+	var bomb = preload("res://scenes/bomb.tscn").instantiate()
+	Globals.add_child(bomb)
+	bomb.position = self.position
+	bombs -= 1 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://cpve8dtclf6xl"]
 
-[ext_resource type="Script" path="res://scripts/sam.gd" id="1_jkqmk"]
+[ext_resource type="Script" path="res://scripts/phoenix.gd" id="1_jkqmk"]
 [ext_resource type="Texture2D" uid="uid://dxtwoppt8l2cs" path="res://assets/tileset 1.png" id="2_5htxd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qmugt"]
